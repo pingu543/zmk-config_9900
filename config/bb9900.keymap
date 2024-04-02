@@ -52,9 +52,9 @@
 
                                     &mkp LCLK                                                                       &mkp RCLK
     &kp LEFT                        &kp C_AC_SEARCH                         &mkp LCLK                               &sk LG(H)                       &kp RIGHT
-    &mtt LS(Q) Q    &mtt LS(W) W    &mtt LS(E) E    &mtt LS(R) R    &mtt LS(T) T    &mtt LS(Y) Y    &mtt LS(U) U    &mtt LS(I) I    &mtt LS(O) O    &mtt LS(P) P
-    &mtt LS(A) A    &mtt LS(S) S    &mtt LS(D) D    &mtt LS(F) F    &mtt LS(G) G    &mtt LS(H) H    &mtt LS(J) J    &mtt LS(K) K    &mtt LS(L) L    &kp BSPC
-    &to ALT		    &mtt LS(Z) Z    &mtt LS(X) X	&mtt LS(C) C    &mtt LS(V) V	&mtt LS(B) B	&mtt LS(N) N	&mtt LS(M) M	&kp DLLR        &kp ENTER
+    &mt LS(Q) Q     &mt LS(W) W     &mt LS(E) E     &mt LS(R) R     &mt LS(T) T     &mt LS(Y) Y     &mt LS(U) U     &mt LS(I) I     &mt LS(O) O     &mt LS(P) P
+    &mt LS(A) A     &mt LS(S) S     &mt LS(D) D     &mt LS(F) F     &mt LS(G) G     &mt LS(H) H     &mt LS(J) J     &mt LS(K) K     &mt LS(L) L     &kp BSPC
+    &to ALT		    &mt LS(Z) Z     &mt LS(X) X     &mt LS(C) C     &mt LS(V) V     &mt LS(B) B	    &mt LS(N) N	    &mt LS(M) M	    &kp DLLR        &kp ENTER
                     &kp CLCK        &kp GLOBE                               &kp SPACE                               &to SYM         &kp CLCK
             >;
         };
