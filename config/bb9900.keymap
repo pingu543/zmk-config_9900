@@ -34,6 +34,10 @@
             bindings = <&out &kp>;
         };
     };
+    &sk {
+        quick-release;
+        lazy;
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -55,7 +59,7 @@
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &to ALT		    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M	        &kp DLLR        &kp ENTER
-                    &kp CLCK        &kp GLOBE                               &kp SPACE                               &to SYM         &kp CLCK
+                    &kp CLCK        &kp GLOBE                               &kp SPACE                               &sl SYM         &kp CLCK
             >;
         };
 
@@ -68,7 +72,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp DEL
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp TAB         &kp LS(ENTER)
-                    &to DEFAULT     &kp N0                                  &kp SPACE                               &to SYM         &to DEFAULT
+                    &to DEFAULT     &kp N0                                  &kp SPACE                               &sl SYM         &to DEFAULT
             >;
         };
 
@@ -78,10 +82,10 @@
             bindings = <        
                                     &kp C_VOL_UP                                                                    &kp C_VOL_DN
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
-    &kp LBKT        &kp LT          &kp LBRC        &kp LG(R)       &kp TILDE       &kp EQUAL       &none           &none           &kp CARET       &kp PRCNT
-    &kp RBKT        &kp GT          &kp RBRC        &kp LG(F)       &kp BSLH        &kp LG(H)       &kp GRAVE       &none           &kp AMPS        &kp DEL
-    &to ALT         &kp LG(Z)       &kp LG(X)       &kp LG(C)       &kp LG(V)       &none           &kp PIPE        &none           &none           &kp LS(ENTER)
-                    &to DEFAULT     &to UPPER                               &kp SPACE                               &to DEFAULT     &to DEFAULT
+    &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
+    &kp EQUAL       &none           &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp DEL
+    &sk LSHFT       &sk GLOBE       &none           &none           &none           &none           &nonr           &none           &kp TAB         &kp LS(ENTER)
+                    &sk LCTRL       &sk LALT                                &kp SPACE                               &sk LGUI        &to UPPER
             >;
         };
 
