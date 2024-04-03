@@ -71,7 +71,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&htl ALT ALT>, <&to ALT>;
+            bindings = <&sl ALT>, <&to ALT>;
         };
     };
     behaviors {
@@ -79,7 +79,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&htl SYM SYM>, <&to SYM>;
+            bindings = <&sl SYM>, <&to SYM>;
         };
     };
 
