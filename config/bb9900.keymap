@@ -113,7 +113,7 @@
         alt_layer {
 
             bindings = <        
-                                    &mkp LCLK                                                                       &mkp RCLK
+                                    &msc SCRL_UP                                                                    &msc SCRL_DOWN
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
@@ -126,7 +126,7 @@
         sym_layer {
 
             bindings = <        
-                                    &kp C_VOL_UP                                                                    &kp C_VOL_DN
+                                    &kp C_VOL_DN                                                                    &kp C_VOL_UP
     &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &kp LA(BSPC)    &kp BSPC
@@ -138,7 +138,7 @@
         upper_layer {
 
             bindings = <
-                                    &kp C_VOL_UP                                                                    &kp C_VOL_DN
+                                    &kp C_VOL_DN                                                                    &kp C_VOL_UP
     &bt BT_SEL 0                    &bt BT_SEL 1                            &td0                                    &bt BT_SEL 2                    &bt BT_SEL 3
     &none           &none           &kp UP          &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
     &none           &kp LEFT        &none           &kp RIGHT       &none             &none         &none           &none           &none           &none
