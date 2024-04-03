@@ -35,7 +35,7 @@
         };
     };
     behaviors {
-        ht_sc: hold_tap_shft_clck {
+        htsc: hold_tap_shft_clck {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -44,24 +44,24 @@
         };
     };
     behaviors {
-        td_sc: tap_dance_shft_clck {
+        tdsc: tap_dance_shft_clck {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_sc CLCK LSHFT>, <&kp CLCK>;
+            bindings = <&htsc CLCK LSHFT>, <&kp CLCK>;
         };
     };
     behaviors {
-      skq: sticky_key_quick_release {
-        compatible = "zmk,behavior-sticky-key";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <1000>;
-        quick-release;
-      };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+        };
     };
     behaviors {
-        td_p: tap_dance_punctuations {
+        tdp: tap_dance_punctuations {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -69,7 +69,7 @@
         };
     };
     behaviors {
-        ht_l: hold_tap_layer {
+        htl: hold_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -78,19 +78,19 @@
         };
     };
     behaviors {
-        td_al: tap_dance_alt_layer {
+        tdal: tap_dance_alt_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_l ALT ALT>, <&to ALT>;
+            bindings = <&htl ALT ALT>, <&to ALT>;
         };
     };
     behaviors {
-        td_sl: tap_dance_sym_layer {
+        tdsl: tap_dance_sym_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_l SYM SYM>, <&to SYM>;
+            bindings = <&htl SYM SYM>, <&to SYM>;
         };
     };
 
@@ -113,8 +113,8 @@
     &sk GLOBE                       &sk LCTRL                               &mkp LCLK                               &sk LALT                        &sk LGUI
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
-    &td_al          &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &td_p           &kp RET
-                    &td_sc          &kp TAB                                 &kp SPACE                               &td_sl          &td_sc
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &tdp            &kp RET
+                    &tdsc           &kp TAB                                 &kp SPACE                               &tdsl           &tdsc
             >;
         };
 
@@ -127,7 +127,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &kp CLCK        &kp N0                                  &kp SPACE                               &td_sl          &kp CLCK
+                    &kp CLCK        &kp N0                                  &kp SPACE                               &tdsl           &kp CLCK
             >;
         };
 
@@ -139,7 +139,7 @@
     &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &kp LA(BSPC)    &kp BSPC
-    &td_al          &sk GLOBE       &sk LCTRL       &sk LALT        &sk LGUI        &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
+    &tdal           &sk GLOBE       &sk LCTRL       &sk LALT        &sk LGUI        &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
                     &kp CLCK        &none                                   &kp SPACE                               &to DEFAULT     &to UPPER
             >;
         };
