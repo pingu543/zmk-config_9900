@@ -38,7 +38,7 @@
         td_shft: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&skq LSHFT>, <&kp CLCK>;
         };
     };
@@ -55,7 +55,7 @@
         tdp: tap_dance_punctuations {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp COMMA>, <&kp EXCL>, <&kp QMARK>;
         };
     };
@@ -72,7 +72,7 @@
         tdal: tap_dance_alt_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&htl 1 1>, <&to 1>;
         };
     };
@@ -80,7 +80,7 @@
         tdsl: tap_dance_sym_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&htl 2 2>, <&to 2>;
         };
     };
