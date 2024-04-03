@@ -34,10 +34,6 @@
             bindings = <&out &kp>;
         };
     };
-    &sk {
-        quick-release;
-        lazy;
-    };
 
     keymap {
         compatible = "zmk,keymap";
