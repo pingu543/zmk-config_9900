@@ -87,9 +87,6 @@
             bindings = <&to>, <&sl>;
         };
     };
-    &sl {
-        release-after-ms = <5000>;
-    };
     behaviors {
         tdal: tap_dance_alt_layer {
             compatible = "zmk,behavior-tap-dance";
