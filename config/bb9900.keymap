@@ -94,7 +94,7 @@
                                     &mkp LCLK                                                                       &mkp RCLK
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
-    &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp DEL
+    &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp ENTER
                     &kp CLCK        &kp N0                                  &kp SPACE                               &to SYM         &kp CLCK
             >;
@@ -105,10 +105,10 @@
 
             bindings = <        
                                     &kp C_VOL_UP                                                                    &kp C_VOL_DN
-    &kp HOME                        &kp K_CMENU                             &mkp LCLK                               &kp ESC                         &kp END 
+    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS &mkp LCLK                              &kp ESC                         &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
-    &kp EQUAL       &none           &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp DEL
-    &to DEFAULT     &none           &none           &none           &none           &none           &none           &none           &none           &kp ENTER
+    &kp EQUAL       &none           &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
+    &to ALT         &none           &none           &none           &none           &none           &none           &none           &none           &kp ENTER
                     &kp CLCK        &none                                   &kp SPACE                               &to DEFAULT     &to UPPER
             >;
         };
