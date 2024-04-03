@@ -79,7 +79,7 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                                     &mkp LCLK                                                                       &mkp RCLK
-    &hts GLOBE GLOBE                &sk LCTRL                               &mkp LCLK                               &sk LALT                        &hts LGUI LGUI
+    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk LALT                        &sk LCTRL
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &to ALT		    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M	        &mt DOT COMMA   &kp RET
