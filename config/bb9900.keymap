@@ -35,11 +35,22 @@
         };
     };
     behaviors {
-        tdaa: tap_dance_aa {
+        td_shft: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&skq LSHFT>, <&kp CLCK>;
+        };
+    };
+    behaviors {
+        hts: hold_tap_sticky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&sk>, <&kp>;
         };
     };
     behaviors {
@@ -49,7 +60,6 @@
         bindings = <&kp>;
         release-after-ms = <1000>;
         quick-release;
-        ignore-modifiers;
       };
     };
 
@@ -69,11 +79,11 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                                     &mkp LCLK                                                                       &mkp RCLK
-    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk TAB                         &sk LALT
+    &hts GLOBE GLOBE                &sk LGUI                                &mkp LCLK                               &sk LALT                        &kp TAB
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &to ALT		    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M	        &kp DLLR        &kp ENTER
-                    &tdaa           &kp N0                                  &kp SPACE                               &to SYM         &tdaa
+                    &td_shft        &kp N0                                  &kp SPACE                               &to SYM         &kp CLCK
             >;
         };
 
