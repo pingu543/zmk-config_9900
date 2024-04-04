@@ -91,7 +91,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&to>, <&sl>;
+            bindings = <&to>, <&msl>;
         };
     };
     behaviors {
@@ -110,29 +110,17 @@
             bindings = <&htl SYM SYM>, <&to SYM>;
         };
     };
-    behaviors {
-        htl2: hold_tap_layer_2 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&sl>, <&to>;
-        };
-    };
-    behaviors {
-        tdal2: tap_dance_alt_layer_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&htl2 ALT ALT>, <&sl ALT>;
-        };
-    };
-    behaviors {
-        tdsl2: tap_dance_sym_layer_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&htl2 SYM SYM>, <&sl SYM>;
+    macros {
+        msl: macro_sticky_layer {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &to DEFAULT>
+                , <&macro_param_1to1>
+                , <&macro_tap &sl MACRO_PLACEHOLDER>
+                ;
         };
     };
 
@@ -152,11 +140,11 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                                     &mkp LCLK                                                                       &mkp RCLK
-    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk LALT                        &sk LCTRL
+    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk RALT                        &sk RCTRL
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &htl ALT ALT    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &tdp            &kp RET
-                    &htks CLCK LSHFT &kp TAB                                &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
+                    &htks CLCK LSHFT &kp TAB                                 &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
             >;
         };
 
@@ -169,7 +157,8 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &htks CLCK LSHFT &kp N0                                 &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
+                    &htks CLCK LSHFT &kp N0                                  &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
+
             >;
         };
 
@@ -180,9 +169,10 @@
                                     &kp C_VOL_DN                                                                    &kp C_VOL_UP
     &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
-    &kp EQUAL       &sk LSHFT       &sk LSHFT       &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
-    &htl ALT ALT    &sk GLOBE       &sk LCTRL       &sk LALT        &sk LGUI        &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
-                    &htks CLCK LSHFT &none                                  &kp SPACE                               &to DEFAULT     &to UPPER
+    &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
+    &htl ALT ALT    &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
+                    &htks CLCK LSHFT &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
+
             >;
         };
 
