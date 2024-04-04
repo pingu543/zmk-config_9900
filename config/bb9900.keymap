@@ -151,7 +151,7 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings
-                = <macro_tap &htks CLCK LSHFT>
+                = <&macro_tap &htks CLCK LSHFT>
                 ;
         };
     };
