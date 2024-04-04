@@ -118,8 +118,6 @@
             tapping-term-ms = <200>;
             bindings = <&sl>, <&to>;
         };
-    };
-    behaviors {
         tdal2: tap_dance_alt_layer_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -136,22 +134,11 @@
     macros {
         mdhtl: macro_default_hold_tap_layer {
             compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &to DEFAULT>
                 , <&macro_param_1to1>
                 , <&macro_tap &htl MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-                ;
-        };
-        mhtcs: macro_hold_tap_clck_lshft {
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &htks CLCK LSHFT>
                 ;
         };
     };
@@ -176,7 +163,7 @@
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &htl ALT ALT    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &tdp            &kp RET
-                    &mhtcs          &kp TAB                                 &kp SPACE                               &htl SYM SYM    &mhtcs
+                    &htks CLCK LSHFT &kp TAB                                 &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
             >;
         };
 
@@ -189,7 +176,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &mhtcs          &kp N0                                  &kp SPACE                               &mdhtl SYM      &mhtcs
+                    &htks CLCK LSHFT &kp N0                                  &kp SPACE                               &mdhtl SYM      &htks CLCK LSHFT
 
             >;
         };
@@ -203,7 +190,7 @@
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
     &mdhtl ALT      &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
-                    &mhtcs          &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
+                    &htks CLCK LSHFT &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
 
             >;
         };
