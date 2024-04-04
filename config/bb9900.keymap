@@ -34,8 +34,6 @@
             bindings = <&out &kp>;
         };
     };
-<<<<<<< Updated upstream
-=======
     behaviors {
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -157,7 +155,6 @@
                 ;
         };
     };
->>>>>>> Stashed changes
 
     keymap {
         compatible = "zmk,keymap";
@@ -175,19 +172,11 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                                     &mkp LCLK                                                                       &mkp RCLK
-<<<<<<< Updated upstream
-    &kp LEFT                        &kp C_AC_SEARCH                         &mkp LCLK                               &sk C_AC_HOME                   &kp RIGHT
-    &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
-    &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
-    &to ALT		    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M	        &kp DLLR        &kp ENTER
-                    &kp CLCK        &kp GLOBE                               &kp SPACE                               &sl SYM         &kp CLCK
-=======
     &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk RALT                        &sk RCTRL
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
     &htl ALT ALT    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &tdp            &kp RET
                     &mhtcs          &kp TAB                                 &kp SPACE                               &htl SYM SYM    &mhtcs
->>>>>>> Stashed changes
             >;
         };
 
@@ -198,15 +187,9 @@
                                     &kp C_VOL_UP                                                                    &kp C_VOL_DN
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
-<<<<<<< Updated upstream
-    &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp DEL
-    &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp TAB         &kp LS(ENTER)
-                    &to DEFAULT     &kp N0                                  &kp SPACE                               &sl SYM         &to DEFAULT
-=======
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
                     &mhtcs          &kp N0                                  &kp SPACE                               &mdhtl SYM      &mhtcs
->>>>>>> Stashed changes
             >;
         };
 
@@ -217,15 +200,9 @@
                                     &kp C_VOL_UP                                                                    &kp C_VOL_DN
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
-<<<<<<< Updated upstream
-    &kp EQUAL       &none           &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp DEL
-    &sk LSHFT       &sk GLOBE       &none           &none           &none           &none           &none           &none           &kp TAB         &kp LS(ENTER)
-                    &sk LCTRL       &sk LALT                                &kp SPACE                               &sk LGUI        &to UPPER
-=======
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
     &mdhtl ALT      &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
                     &mhtcs          &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
->>>>>>> Stashed changes
             >;
         };
 
