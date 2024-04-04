@@ -183,38 +183,40 @@
 
         alt_layer {
 
-            bindings = <        
-                                    &kp C_VOL_UP                                                                    &kp C_VOL_DN
+            bindings = <
+                                    &msc SCRL_UP                                                                    &msc SCRL_DOWN
     &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
                     &mhtcs          &kp N0                                  &kp SPACE                               &mdhtl SYM      &mhtcs
+
             >;
         };
 
 
         sym_layer {
 
-            bindings = <        
-                                    &kp C_VOL_UP                                                                    &kp C_VOL_DN
-    &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
+            bindings = <
+                                    &kp C_VOL_DN                                                                    &kp C_VOL_UP
+    &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
     &mdhtl ALT      &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
                     &mhtcs          &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
+
             >;
         };
 
         upper_layer {
 
             bindings = <
-                                    &msc SCRL_UP                                                                    &msc SCRL_DOWN
+                                    &kp C_VOL_DN                                                                    &kp C_VOL_UP
     &bt BT_SEL 0                    &bt BT_SEL 1                            &td0                                    &bt BT_SEL 2                    &bt BT_SEL 3
     &none           &none           &kp UP          &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
     &none           &kp LEFT        &none           &kp RIGHT       &none             &none         &none           &none           &none           &none
     &to DEFAULT     &none           &kp DOWN        &none           &bl BL_DEC        &bl BL_TOG    &bl BL_INC      &none           &bootloader     &none
-                    &to DEFAULT     &to DEFAULT                             &hm OUT_TOG SPACE                       &to DEFAULT     &to DEFAULT
+                    &to DEFAULT     &to DEFAULT                             &out OUT_TOG                            &to DEFAULT     &to DEFAULT
             >;
         };
     };
