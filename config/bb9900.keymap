@@ -112,7 +112,7 @@
     };
     macros {
         msl: macro_sticky_layer {
-            compatible = "zmk,behavior-macro-two-param";
+            compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <1>;
