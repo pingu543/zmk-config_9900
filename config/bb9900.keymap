@@ -18,7 +18,10 @@
 #define UPPER 3
 
 &sk {
-    release-after-ms = <10000>;
+    release-after-ms = <2000>;
+};
+&sl {
+    release-after-ms = <2000>;
 };
 
 / {
@@ -41,7 +44,7 @@
     behaviors {
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
-            release-after-ms = <10000>;
+            release-after-ms = <2000>;
             #binding-cells = <1>;
             bindings = <&kp>;
             quick-release;
