@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2024 pingu543
+ * Copyright (c) 2023 ZitaoTech
  *
- * Fork of ZitaoTech's zmk-config_9900.
+ * Fork of ZitaoTech's zmk-config_9900. Optimized for iOS and Windows usage.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -102,6 +102,7 @@
             tapping-term-ms = <200>;
             bindings = <&htl SYM SYM>, <&to SYM>;
         };
+        // Borrowing Drexel Macintosh's timing for htbb
         htbb: hold_tap_blackberry {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -110,7 +111,7 @@
             quick-tap-ms = <125>;
             require-prior-idle-ms = <125>;
             bindings = <&kp>, <&mkpc>;
-        }
+        };
     };
     macros {
         msl: macro_sticky_layer {
