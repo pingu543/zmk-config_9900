@@ -57,7 +57,7 @@
             bindings = <&kp>;
             quick-release;
         };
-        htks: hold_tap_kp_skq {
+        mts: mold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -68,7 +68,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&htks CLCK LSHFT>, <&kp CLCK>;
+            bindings = <&mts CLCK LSHFT>, <&kp CLCK>;
         };
         htsk: hold_tap_skq_kp {
             compatible = "zmk,behavior-hold-tap";
@@ -102,15 +102,16 @@
             tapping-term-ms = <200>;
             bindings = <&htl SYM SYM>, <&to SYM>;
         };
-        // Borrowing Drexel Macintosh's timing for htbb
-        htbb: hold_tap_blackberry {
+        // Credit: Drexel Macintosh
+        // mtt expects LS(letter) letter to recreate BlackBerry's tap for lowercase and hold for uppercase behavior.
+        mtt: mod_tap_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&mkpc>;
+            bindings = <&tap>, <&tap>;
         };
     };
     macros {
@@ -125,18 +126,15 @@
                 , <&macro_tap &sl MACRO_PLACEHOLDER>
                 ;
         };
-        // mkpc simulates one tap of capitalized letter with no repeat even when key is held.
-        mkpc: macro_key_press_capitalize {
+        // Credit: Drexel Macintosh
+        // tap will only send the keypress once, even if the key is held down.
+        // This makes BlackBerry's hold for uppercase behavior easier to use.
+        tap: tap {
             compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
             #binding-cells = <1>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LSHFT>
-                ;
+            // By default, macros will tap each behavior in the bindings list,
+            // so this will tap "&kp <param1>".
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
     };
 
@@ -167,10 +165,10 @@
 
                                     &mkp LCLK                                                                       &mkp RCLK
     &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk RALT                        &sk RCTRL
-    &htbb Q Q          &kp W           &kp E           &kp R           &kp T           &kp Y            &kp U          &kp I           &kp O           &kp P
-    &htbb A A           &kp S           &kp D           &kp F           &kp G           &kp H            &kp J          &kp K           &kp L           &kp BSPC
-    &htl ALT ALT    &kp Z           &kp X           &kp C           &kp V           &kp B            &kp N          &kp M           &tdp            &kp RET
-                    &htks CLCK LSHFT &kp TAB                                 &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
+    &mtt LS(Q) Q    &mtt LS(W) W    &mtt LS(E) E    &mtt LS(R) R    &mtt LS(T) T    &mtt LS(Y) Y     &mtt LS(U) U   &mtt LS(I) I    &mtt LS(O) O    &mtt LS(P) P
+    &mtt LS(A) A    &mtt LS(S) S    &mtt LS(D) D    &mtt LS(F) F    &mtt LS(G) G    &mtt LS(H) H     &mtt LS(J) J   &mtt LS(K) K    &mtt LS(L) L    &kp BSPC
+    &htl ALT ALT    &mtt LS(Z) Z    &mtt LS(X) X    &mtt LS(C) C    &mtt LS(V) V    &mtt LS(B) B     &mtt LS(N) N   &mtt LS(M) M    &tdp            &kp RET
+                    &mts CLCK LSHFT &kp TAB                                 &kp SPACE                               &htl SYM SYM    &mts CLCK LSHFT
             >;
         };
 
@@ -183,7 +181,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &htks CLCK LSHFT &kp N0                                  &kp SPACE                               &htl SYM SYM    &htks CLCK LSHFT
+                    &mts CLCK LSHFT &kp N0                                  &kp SPACE                               &htl SYM SYM    &mts CLCK LSHFT
 
             >;
         };
@@ -197,7 +195,7 @@
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &sk LSHFT       &none           &none           &kp BSLH        &kp PIPE        &kp AMPS        &none           &none           &kp BSPC
     &htl ALT ALT    &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
-                    &htks CLCK LSHFT &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
+                    &mts CLCK LSHFT &sk GLOBE                               &kp SPACE                               &to DEFAULT     &to UPPER
 
             >;
         };
