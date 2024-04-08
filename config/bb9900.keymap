@@ -20,10 +20,11 @@
 #define UPPER 3
 
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <1000>;
+    lazy;
 };
 &sl {
-    release-after-ms = <2000>;
+    release-after-ms = <1000>;
 };
 
 / {
@@ -52,7 +53,7 @@
         };
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
-            release-after-ms = <2000>;
+            release-after-ms = <1000>;
             #binding-cells = <1>;
             bindings = <&kp>;
             quick-release;
@@ -102,22 +103,11 @@
             tapping-term-ms = <200>;
             bindings = <&htl SYM SYM>, <&to SYM>;
         };
-        tddl: tap_dance_default_layer {
+        tddul: tap_dance_default_upper_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&to DEFAULT>, <&to DEFAULT>;
-        };
-        // Credit: Drexel Macintosh
-        // mtt expects LS(letter) letter to recreate BlackBerry's tap for lowercase and hold for uppercase behavior.
-        mtt: mod_tap_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            require-prior-idle-ms = <125>;
-            bindings = <&tap>, <&tap>;
+            bindings = <&to DEFAULT>, <&to DEFAULT>, <&to UPPER>;
         };
     };
     macros {
@@ -132,6 +122,22 @@
                 , <&macro_tap &sl MACRO_PLACEHOLDER>
                 ;
         };
+    };
+
+    behaviors {
+        // Credit: Drexel Macintosh
+        // mtt expects LS(letter) letter to recreate BlackBerry's tap for lowercase and hold for uppercase behavior.
+        mtt: mod_tap_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            require-prior-idle-ms = <125>;
+            bindings = <&tap>, <&tap>;
+        };
+    };
+    macros {
         // Credit: Drexel Macintosh
         // tap will only send the keypress once, even if the key is held down.
         // This makes BlackBerry's hold for uppercase behavior easier to use.
@@ -187,7 +193,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &tddl           &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &tdsc           &kp N0                                  &kp SPACE                               &tdsl           &tdsc
+                    &sk LSHFT       &kp N0                                  &kp SPACE                               &tdsl           &kp CLCK
 
             >;
         };
@@ -199,9 +205,9 @@
                                     &kp C_VOL_DN                                                                    &kp C_VOL_UP
     &kp ESC                         &kp C_PREV                              &kp C_PLAY_PAUSE                        &kp C_NEXT                      &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
-    &kp EQUAL       &sk LSHFT       &kp PG_UP       &kp PG_DN       &kp BSLH        &kp PIPE        &kp AMPS        &kp HOME        &kp END         &kp BSPC
+    &kp EQUAL       &kp PG_UP       &kp PG_DN       &none           &kp BSLH        &kp PIPE        &kp AMPS        &kp HOME        &kp END         &kp BSPC
     &tdal           &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
-                    &tdsc           &sk GLOBE                               &kp SPACE                               &tddl           &to UPPER
+                    &sk LSHFT       &sk GLOBE                               &kp SPACE                               &tddul          &kp CLCK
 
             >;
         };
