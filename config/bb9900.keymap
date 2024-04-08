@@ -21,7 +21,7 @@
 
 &sk {
     release-after-ms = <1000>;
-    lazy;
+    properties: lazy;
 };
 &sl {
     release-after-ms = <1000>;
