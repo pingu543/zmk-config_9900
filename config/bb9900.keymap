@@ -20,8 +20,8 @@
 #define UPPER 3
 
 &sk {
+    lazy;
     release-after-ms = <1000>;
-    properties: lazy;
 };
 &sl {
     release-after-ms = <1000>;
