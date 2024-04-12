@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp>, <&skq>;
         };
         tdsc: tap_dance_shft_clck {
@@ -74,7 +74,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&skq>, <&kp>;
         };
         tdcs: tap_dance_clck_shft {
@@ -87,7 +87,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&to>, <&msl>;
         };
         tdal: tap_dance_alt_layer {
@@ -113,6 +113,36 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&to DEFAULT>, <&to DEFAULT>, <&to UPPER>;
+        };
+        tdglobe: tap_dance_globe {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk GLOBE>, <&kt COMMA>;
+        };
+        tdgui: tap_dance_gui {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LGUI>, <&kt LGUI>;
+        };
+        tdctrl: tap_dance_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LCTRL>, <&kt LCTRL>;
+        };
+        tdalt: tap_dance_alt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LALT>, <&kt LALT>;
+        };
+        tdshft: tap_dance_shft {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHFT>, <&kt LSHFT>;
         };
         // Credit: Drexel Macintosh
         // mtt expects LS(letter) letter to recreate BlackBerry's tap for lowercase and hold for uppercase behavior.
@@ -176,11 +206,11 @@
         */
 
                                     &mkp LCLK                                                                       &mkp RCLK
-    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk RALT                        &sk RCTRL
+    &tdglobe                        &tdgui                                  &mkp LCLK                               &tdalt                          &tdctrl
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
     &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &tdp            &kp RET
-                    &tdsc           &kp TAB                                 &kp SPACE                               &tdsl           &tdsc
+                    &tdshft         &kp TAB                                 &kp SPACE                               &tdsl           &kp CLCK
             >;
         };
 
@@ -193,7 +223,7 @@
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
     &tddl           &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &sk LSHFT       &kp N0                                  &kp SPACE                               &tdsl           &kp CLCK
+                    &tdshft         &kp N0                                  &kp SPACE                               &tdsl           &kp CLCK
 
             >;
         };
@@ -206,8 +236,8 @@
     &kp ESC                         &kp C_PREV                              &kp C_PLAY_PAUSE                        &kp C_NEXT                      &kp DEL 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &kp PG_UP       &kp PG_DN       &none           &kp BSLH        &kp PIPE        &kp AMPS        &kp HOME        &kp END         &kp BSPC
-    &tdal           &sk LCTRL       &sk LALT        &sk LGUI        &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
-                    &sk LSHFT       &sk GLOBE                               &kp SPACE                               &tddul          &kp CLCK
+    &tdal           &tdctrl         &tdalt          &tdgui          &none           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RET
+                    &tdshft         &tdglobe                                &kp SPACE                               &tddul          &kp CLCK
 
             >;
         };
