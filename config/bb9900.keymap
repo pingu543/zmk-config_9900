@@ -230,8 +230,8 @@
     &kp ESC                         &kp C_PREV                              &kp C_PLAY_PAUSE                        &kp C_NEXT                      &kp TAB 
     &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
     &kp EQUAL       &kp HOME        &kp PG_UP       &kp END         &kp BSLH        &kp PIPE        &kp AMPS        &kp UP          &kp DEL         &kp BSPC
-    &tddl           &kp GLOBE       &kp LCTRL       &kp LALT        &kp LGUI        &kp K_CMENU     &kp LEFT        &kp DOWN        &kp RIGHT       &kp RET
-                    &kp LSHFT       &kp PG_DN                               &kp SPACE                               &tddl           &tdul
+    &tdal           &kp GLOBE       &kp LCTRL       &kp LALT        &kp LGUI        &kp K_CMENU     &kp LEFT        &kp DOWN        &kp RIGHT       &kp RET
+                    &kp LSHFT       &kp PG_DN                               &kp SPACE                               &tddul          &kp CLCK
 
             >;
         };
@@ -244,7 +244,7 @@
     &none           &none           &none           &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
     &none           &none           &none           &none           &none             &none         &none           &none           &none           &none
     &to DEFAULT     &none           &none           &none           &bl BL_DEC        &bl BL_TOG    &bl BL_INC      &none           &bootloader     &none
-                    &to DEFAULT     &to DEFAULT                             &out OUT_TOG                            &to DEFAULT     &to DEFAULT
+                    &none           &none                                   &out OUT_TOG                            &to DEFAULT     &none
             >;
         };
     };
