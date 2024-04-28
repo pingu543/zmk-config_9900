@@ -96,7 +96,7 @@
             tapping-term-ms = <200>;
             bindings = <&htls ALT ALT>, <&to ALT>;
         };
-        tdhsl: tap_dance_hold_alt_layer {
+        tdhsl: tap_dance_hold_sym_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
