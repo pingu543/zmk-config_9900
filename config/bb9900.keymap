@@ -15,8 +15,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define DEFAULT 0
-#define ALT 1
-#define SYM 2
+#define SYM 1
+#define ALT 2
 #define UPPER 3
 
 &sk {
@@ -124,31 +124,31 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&msl ALT>, <&to ALT>;
+            bindings = <&sl ALT>, <&to ALT>;
         };
         tdsl: tap_dance_sym_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&msl SYM>, <&to SYM>;
+            bindings = <&to SYM>, <&to SYM>;
         };
         tdul: tap_dance_upper_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&msl UPPER>, <&to UPPER>;
+            bindings = <&sl UPPER>, <&to UPPER>;
         };
         // Credit: Drexel Macintosh
         // mtt expects LS(letter) letter to recreate BlackBerry's tap for lowercase and hold for uppercase behavior.
         mtt: mod_tap_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            require-prior-idle-ms = <125>;
-            bindings = <&tap>, <&tap>;
-        };
+	        compatible = "zmk,behavior-hold-tap";
+		    #binding-cells = <2>;
+	        flavor = "tap-preferred";
+	        tapping-term-ms = <200>;
+	        quick-tap-ms = <125>;
+	        require-prior-idle-ms = <125>;
+	        bindings = <&tap>, <&tap>;
+   	 };
     };
     macros {
         msl: macro_sticky_layer {
@@ -204,34 +204,32 @@
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
     &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp C_EJECT     &kp RET
-                    &kp LSHFT       &kp TAB                                 &kp SPACE                               &tdsl           &kp CLCK
+                    &kp LSHFT       &kp TAB                                 &kp SPACE                               &tdsl           &kp RSHFT
             >;
         };
-
-
-        alt_layer {
-
-            bindings = <
-                                    &msc SCRL_UP                                                                    &msc SCRL_DOWN
-    &kp LEFT                        &kp DOWN                                &mkp LCLK                               &kp UP                          &kp RIGHT 
-    &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
-    &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
-    &tddl           &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
-                    &kp LSHFT       &kp N0                                  &kp SPACE                               &tdsl           &kp CLCK
-
-            >;
-        };
-
 
         sym_layer {
 
             bindings = <
-                                    &kp C_VOL_DN                                                                    &kp C_VOL_UP
-    &kp ESC                         &kp C_PREV                              &kp C_PLAY_PAUSE                        &kp C_NEXT                      &kp TAB 
-    &kp TILDE       &kp GRAVE       &kp LBRC        &kp RBRC        &kp LBKT        &kp RBKT        &kp LT          &kp GT          &kp CARET       &kp PRCNT
-    &kp EQUAL       &kp HOME        &kp PG_UP       &kp END         &kp BSLH        &kp PIPE        &kp AMPS        &kp UP          &kp DEL         &kp BSPC
-    &tdal           &kp GLOBE       &kp LCTRL       &kp LALT        &kp LGUI        &kp K_CMENU     &kp LEFT        &kp DOWN        &kp RIGHT       &kp RET
-                    &kp LSHFT       &kp PG_DN                               &kp SPACE                               &tddl           &tdul
+                                    &mkp LCLK                                                                       &mkp RCLK
+    &kp UP                          &kp DOWN                                &mkp LCLK                               &kp LEFT                        &kp RIGHT
+    &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
+    &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp C_EJECT     &kp RET
+                    &kp LSHFT       &kp TAB                                 &kp SPACE                               &tddl           &kp RSHFT
+
+            >;
+        };
+
+        alt_layer {
+
+            bindings = <
+                                    &msc LCLK                                                                       &msc RCLK
+    &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
+    &mtt TILDE HASH &mtt GRAVE N1   &mtt LBRC N2    &mtt RBRC N3    &mtt LBKT LPAR  &mtt RBKT RPAR  &mtt LT UNDER   &mtt GT MINUS   &mtt CARET PLUS &mtt PRCNT AT
+    &mtt EQUAL STAR &mtt N4 N4      &mtt N5 N5      &mtt N6 N6      &mtt BSLH SLASH &mtt PIPE COLON &mtt AMPS SEMI  &mtt APOS APOS  &mtt DQT DQT    &kp BSPC
+    &tddl           &mtt N7 N7      &mtt N8 N8      &mtt N9 N9      &mtt QMARK QMARK &mtt EXCL EXCL &mtt COMMA COMMA &mtt DOT DOT   &mtt DLLR DLLR  &kp RET
+                    &kp CLCK        &mtt N0 N0                              &kp SPACE                               &tdsl           &tdul
 
             >;
         };
