@@ -111,7 +111,7 @@
         tddl: tap_dance_default_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&to DEFAULT>, <&to DEFAULT>;
         };
         tddul: tap_dance_default_upper_layer {
@@ -123,19 +123,19 @@
         tdal: tap_dance_alt_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&sl ALT>, <&to ALT>;
         };
         tdsl: tap_dance_sym_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&to SYM>, <&to SYM>;
         };
         tdul: tap_dance_upper_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&sl UPPER>, <&to UPPER>;
         };
         // Credit: Drexel Macintosh
@@ -200,11 +200,11 @@
         */
 
                                     &mkp LCLK                                                                       &mkp RCLK
-    &kp GLOBE                       &kp LGUI                                &mkp LCLK                               &kp LALT                        &kp LCTRL
+    &sk GLOBE                       &sk LGUI                                &mkp LCLK                               &sk LALT                        &sk LCTRL
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
-    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp C_EJECT     &kp RET
-                    &kp LSHFT       &kp TAB                                 &kp SPACE                               &tdsl           &kp RSHFT
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp DEL         &kp RET
+                    &sk LSHFT       &kp TAB                                 &kp SPACE                               &tdsl           &sk RSHFT
             >;
         };
 
@@ -215,8 +215,8 @@
     &kp UP                          &kp DOWN                                &mkp LCLK                               &kp LEFT                        &kp RIGHT
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
-    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp C_EJECT     &kp RET
-                    &kp LSHFT       &kp TAB                                 &kp SPACE                               &tddl           &kp RSHFT
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp DEL         &kp RET
+                    &sk LSHFT       &kp TAB                                 &kp SPACE                               &tddl           &sk RSHFT
 
             >;
         };
@@ -225,11 +225,11 @@
 
             bindings = <
                                     &msc LCLK                                                                       &msc RCLK
-    &kp ESC                         &kp HOME                                &mkp LCLK                               &kp END                         &kp DEL 
+    &kp CLCK                        &kp C_AC_SEARCH                         &mkp LCLK                               &kp ESC                         &kp C_EJECT 
     &mtt TILDE HASH &mtt GRAVE N1   &mtt LBRC N2    &mtt RBRC N3    &mtt LBKT LPAR  &mtt RBKT RPAR  &mtt LT UNDER   &mtt GT MINUS   &mtt CARET PLUS &mtt PRCNT AT
     &mtt EQUAL STAR &mtt N4 N4      &mtt N5 N5      &mtt N6 N6      &mtt BSLH SLASH &mtt PIPE COLON &mtt AMPS SEMI  &mtt APOS APOS  &mtt DQT DQT    &kp BSPC
     &tddl           &mtt N7 N7      &mtt N8 N8      &mtt N9 N9      &mtt QMARK QMARK &mtt EXCL EXCL &mtt COMMA COMMA &mtt DOT DOT   &mtt DLLR DLLR  &kp RET
-                    &kp CLCK        &mtt N0 N0                              &kp SPACE                               &tdsl           &tdul
+                    &tdul           &mtt N0 N0                              &kp SPACE                               &tdsl           &tdul
 
             >;
         };
