@@ -215,19 +215,6 @@
             >;
         };
 
-        sym_layer {
-
-            bindings = <
-                                    &mkp LCLK                                                                       &mkp RCLK
-    &kp UP                          &kp DOWN                                &mkp LCLK                               &kp LEFT                        &kp RIGHT
-    &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
-    &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
-    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp DEL         &kp RET
-                    &sk LSHFT       &kp TAB                                 &kp SPACE                               &tddl           &sk RSHFT
-
-            >;
-        };
-
         alt_layer {
 
             bindings = <
@@ -237,6 +224,19 @@
     &mtt EQUAL STAR &mtt N4 N4      &mtt N5 N5      &mtt N6 N6      &mtt BSLH SLASH &mtt PIPE COLON &mtt AMPS SEMI  &mtt APOS APOS  &mtt DQT DQT    &kp BSPC
     &tddl           &mtt N7 N7      &mtt N8 N8      &mtt N9 N9      &mtt QMARK QMARK &mtt EXCL EXCL &mtt COMMA COMMA &mtt DOT DOT   &mtt DLLR DLLR  &kp RET
                     &tdul           &mtt N0 N0                              &kp SPACE                               &kp LEFT        &kp RIGHT
+
+            >;
+        };
+
+        sym_layer {
+
+            bindings = <
+                                    &mkp LCLK                                                                       &mkp RCLK
+    &kp UP                          &kp DOWN                                &mkp LCLK                               &kp LEFT                        &kp RIGHT
+    &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
+    &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp DEL         &kp RET
+                    &sk LSHFT       &kp TAB                                 &kp SPACE                               &tddl           &sk RSHFT
 
             >;
         };
