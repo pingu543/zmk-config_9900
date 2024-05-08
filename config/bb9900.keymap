@@ -90,11 +90,26 @@
             tapping-term-ms = <100>;
             bindings = <&to>, <&msl>;
         };
+        htkpsl: hold_tap_kp_sl {
+	        compatible = "zmk,behavior-hold-tap";
+		    #binding-cells = <2>;
+	        flavor = "tap-preferred";
+	        tapping-term-ms = <200>;
+	        quick-tap-ms = <125>;
+	        require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&msl>;
+        };
         tdhal: tap_dance_hold_alt_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&htls ALT ALT>, <&to ALT>;
+        };
+        tdhale: tap_dance_hold_alt_layer_eject {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <500>;
+            bindings = <&htkpsl C_EJECT ALT>, <&to ALT>;
         };
         tdhsl: tap_dance_hold_sym_layer {
             compatible = "zmk,behavior-tap-dance";
@@ -218,7 +233,7 @@
         alt_layer {
 
             bindings = <
-                                    &msc LCLK                                                                       &msc RCLK
+                                    &mkp LCLK                                                                       &mkp RCLK
     &kp TAB                         &kp CLCK                                &mkp LCLK                               &mtt C_EJECT ESC                &kp DEL 
     &mtt TILDE HASH &mtt GRAVE N1   &mtt LBRC N2    &mtt RBRC N3    &mtt LBKT LPAR  &mtt RBKT RPAR  &mtt LT UNDER   &mtt GT MINUS   &mtt CARET PLUS &mtt PRCNT AT
     &mtt EQUAL STAR &mtt N4 N4      &mtt N5 N5      &mtt N6 N6      &mtt BSLH SLASH &mtt PIPE COLON &mtt AMPS SEMI  &mtt APOS APOS  &mtt DQT DQT    &kp BSPC
