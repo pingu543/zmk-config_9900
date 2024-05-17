@@ -170,6 +170,15 @@
 	        quick-tap-ms = <125>;
 	        require-prior-idle-ms = <125>;
 	        bindings = <&tap>, <&tap>;
+
+        // Credit: Drexel Macintosh
+        // Drexel's version of shift/capslock.
+        SHFT: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LSHFT>, <&kp CLCK>;
+        };
    	 };
     };
     macros {
@@ -226,7 +235,7 @@
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
     &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp UP          &kp RET
-                    &sk LSHFT       &kp DOWN                                &kp SPACE                               &kp LEFT        &kp RIGHT
+                    &SHFT           &kp DOWN                                &kp SPACE                               &kp LEFT        &kp RIGHT
             >;
         };
 
