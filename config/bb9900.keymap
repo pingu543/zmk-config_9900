@@ -152,7 +152,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
-            bindings = <&sl UPPER>, <&to UPPER>;
+            bindings = <&msl UPPER>, <&to UPPER>;
         };
         tdal2: tap_dance_alt_layer_2 {
             compatible = "zmk,behavior-tap-dance";
