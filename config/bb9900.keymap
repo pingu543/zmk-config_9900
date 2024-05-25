@@ -20,10 +20,10 @@
 #define UPPER 3
 
 &sk {
-    release-after-ms = <1000>;
+    release-after-ms = <3000>;
 };
 &sl {
-    release-after-ms = <2000>;
+    release-after-ms = <3000>;
 };
 
 / {
