@@ -123,12 +123,12 @@
             tapping-term-ms = <200>;
             bindings = <&htls SYM SYM>, <&to SYM>, <&to UPPER>;
         };
-        // Having two identical bindings in one tap dance is to safeguard against accidental double tap.
+        // Binging &to ALT to second tap allows switching from sticky ALT to full ALT from ALT layer, rather than having to go back to DEFAULT layer first.
         tddl: tap_dance_default_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
-            bindings = <&to DEFAULT>, <&to DEFAULT>;
+            bindings = <&to DEFAULT>, <&to ALT>;
         };
         tddul: tap_dance_default_upper_layer {
             compatible = "zmk,behavior-tap-dance";
@@ -305,8 +305,8 @@
     &bt0                            &bt1                                    &bt BT_CLR                              &bt2                            &bt3
     &bt4            &none           &none           &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
     &none           &none           &none           &none           &none             &none         &none           &none           &none           &none
-    &tddl           &none           &none           &none           &bl BL_DEC        &bl BL_TOG    &bl BL_INC      &none           &bootloader     &none
-                    &tddl           &none                                   &out OUT_TOG                            &none           &none
+    &to DEFAULT     &none           &none           &none           &bl BL_DEC        &bl BL_TOG    &bl BL_INC      &none           &bootloader     &none
+                    &to DEFAULT     &none                                   &out OUT_TOG                            &none           &none
             >;
         };
     };
