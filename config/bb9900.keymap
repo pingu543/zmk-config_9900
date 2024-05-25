@@ -203,6 +203,39 @@
             // so this will tap "&kp <param1>".
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
+        // Credit: jonmilley
+        // These macros will turn off all the bluetooth connections except the current active one.
+        // This will prevent the keyboard from waking up all the paired devices at the same time everytime it is used.
+        bt0: bt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+            label = "BT0";
+        };
+        bt1: bt1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+            label = "BT1";
+        };
+        bt2: bt2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4>;
+            label = "BT2";
+        };
+        bt3: bt3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>;
+            label = "BT3";
+        };
+        bt4: bt4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3>;
+            label = "BT4";
+        };
     };
 
     keymap {
@@ -269,8 +302,8 @@
 
             bindings = <
                                     &none                                                                           &none
-    &bt BT_SEL 0                    &bt BT_SEL 1                            &bt BT_CLR                              &bt BT_SEL 2                    &bt BT_SEL 3
-    &none           &none           &none           &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
+    &bt0                            &bt1                                    &bt BT_CLR                              &bt2                            &bt3
+    &bt4            &none           &none           &sys_reset      &ext_power EP_TOG &none         &none           &none           &none           &none
     &none           &none           &none           &none           &none             &none         &none           &none           &none           &none
     &tddl           &none           &none           &none           &bl BL_DEC        &bl BL_TOG    &bl BL_INC      &none           &bootloader     &none
                     &tddl           &none                                   &out OUT_TOG                            &none           &none
