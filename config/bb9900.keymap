@@ -127,7 +127,7 @@
         tddl: tap_dance_default_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <300>;
             bindings = <&to DEFAULT>, <&to ALT>;
         };
         tddul: tap_dance_default_upper_layer {
@@ -139,7 +139,7 @@
         tdal: tap_dance_alt_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <300>;
             bindings = <&sl ALT>, <&to ALT>;
         };
         tdsl: tap_dance_sym_layer {
@@ -267,8 +267,8 @@
     &sk GLOBE                       &sk LEFT_COMMAND                        &kp CAPSLOCK                            &sk LEFT_CONTROL                &kp C_EJECT
     &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
     &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp BSPC
-    &to ALT         &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp UP          &kp RET
-                    &sk LSHFT       &kp DOWN                                &kp SPACE                               &kp LEFT        &kp RIGHT
+    &tdal           &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp UP          &kp RET
+                    &SHFT           &kp DOWN                                &kp SPACE                               &kp LEFT        &kp RIGHT
             >;
         };
 
@@ -279,7 +279,7 @@
     &kp GLOBE                       &kp LEFT_COMMAND                        &kp CAPSLOCK                            &kp LEFT_CONTROL                &kp C_EJECT
     &kp HASH        &kp N1          &kp N2          &kp N3          &kp LPAR        &kp RPAR        &kp UNDER       &kp MINUS       &kp PLUS        &kp AT
     &kp STAR        &kp N4          &kp N5          &kp N6          &kp SLASH       &kp COLON       &kp SEMI        &kp APOS        &kp DQT         &kp BSPC
-    &to DEFAULT     &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
+    &tddl           &kp N7          &kp N8          &kp N9          &kp QMARK       &kp EXCL        &kp COMMA       &kp DOT         &kp DLLR        &kp RET
                     &to UPPER       &kp N0                                  &kp SPACE                               &kp LEFT        &kp RIGHT
 
             >;
